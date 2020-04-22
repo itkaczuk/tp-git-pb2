@@ -7,7 +7,7 @@ public class Calculadora {
 	public static void main(String[] args) {
 		Integer a = 0;
 		Integer b = 0;
-		Integer opcion = 0;
+		Integer opcion1 = 0;
 		Integer resultado = 0;
 		Scanner teclado = new Scanner(System.in);
 		
