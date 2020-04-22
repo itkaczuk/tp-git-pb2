@@ -7,29 +7,94 @@ public class Calculadora {
 	public static void main(String[] args) {
 		Integer a = 0;
 		Integer b = 0;
-		Integer opcion1 = 0;
+		Integer opcion = 0;
 		Integer resultado = 0;
 		Scanner teclado = new Scanner(System.in);
 		
 		do{
-			System.out.println("Ingrese su operación /n 1 para sumar /n 2 para restar /n 3 para multiplicar /n 4 para dividir"); 
-			opcion = teclado.nextInt();
-		}while(opcion < 1 && opcion > 4);
-			System.out.println("Ingrese el primer numero");
-		a = teclado.nextInt();
-		System.out.println("Ingrese el segundo numero");
-		a = teclado.nextInt();
-		if(opcion.equals(1)){
-			resultado = a + b;
-		}else if(opcion.equals(2)){
-			resultado = a - b;
-		}else if(opcion.equals(3)){
-			resultado = a * b;
-		}else{
-			resultado = a / b;
-		}
-		System.out.println("El resultado es " + resultado.toString());
-		}
+			 opcion = seleccionarOpcion();
+			switch (opcion) {
+			case 1: restar();
+				break;
+			case 2: 
+				resultado = sumar();
+				break;
+			case 3:
+				resultado = dividir();
+				break;
+			case 4:
+				resultado = multiplicar();
+				break;
+			case 9:
+				break;
+			default:
+				System.out.println("Opción Invalida");
+				break;
+			}
+		} while (opcion != 9);
+
 	}
+
+	
+	private static Integer seleccionarOpcion() {
+		Scanner teclado = new Scanner(System.in);
+		int opcionSeleccionada=0;
+
+		System.out.println("************************");
+		System.out.println("Menu calculadora");
+		System.out.println("1 - Restar");
+		System.out.println("2 - Sumar");
+		System.out.println("3 - Dividir");
+		System.out.println("4 - Multiplicar");
+		System.out.println("9 - Salir");
+		System.out.println("************************");
+		System.out.println("Ingrese una opcion");
+		
+		opcionSeleccionada = teclado.nextInt();
+		
+		return opcionSeleccionada;
+	}
+	
+	private static Integer sumar() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Ingrese el primer numero");
+		int a = teclado.nextInt();
+		System.out.println("Ingrese el segundo numero");
+		int b = teclado.nextInt();
+		int resultado = a + b;
+		return resultado;	
+	}
+	private static Integer restar() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Ingrese el primer numero");
+		int a = teclado.nextInt();
+		System.out.println("Ingrese el segundo numero");
+		int b = teclado.nextInt();
+		int resultado = a - b;
+		return resultado;	
+	}
+	
+	private static Integer multiplicar() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Ingrese el primer numero");
+		int a = teclado.nextInt();
+		System.out.println("Ingrese el segundo numero");
+		int b = teclado.nextInt();
+		int resultado = a * b;
+		return resultado;	
+	}
+	
+	private static Integer dividir() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Ingrese el primer numero");
+		int a = teclado.nextInt();
+		System.out.println("Ingrese el segundo numero");
+		int b = teclado.nextInt();
+		int resultado = a / b;
+		return resultado;	
+	}
+
+	
+}
 
 		
